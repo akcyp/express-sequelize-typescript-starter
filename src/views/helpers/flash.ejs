@@ -1,0 +1,13 @@
+<div class="flashMessages">
+  <%
+    if (typeof messages === 'object') {
+      for (const msg of messages) {
+  %>
+    <div class="card-panel red">
+      <%= msg %>
+    </div>
+  <%
+      }
+    }
+  %>
+</div>
