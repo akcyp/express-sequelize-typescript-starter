@@ -6,11 +6,14 @@ interface UserAttributes {
   id: number;
   username: string;
   password: string;
-};
+}
 
-interface UserCreationAttributes extends Optional < UserAttributes, "id" > {}
+interface UserCreationAttributes extends Optional < UserAttributes, 'id' > {}
 
 export class User extends Model < UserAttributes, UserCreationAttributes > implements UserAttributes {
+  public static async generateHash (password: string): Promise<string> {
+    return await bcrypt.hash(password, bcrypt.genSaltSync(5));
+  }
   public id!: number;
   public username!: string;
   public password!: string;
@@ -18,11 +21,8 @@ export class User extends Model < UserAttributes, UserCreationAttributes > imple
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
-  public async verifyPassword (password: string) {
+  public async verifyPassword (password: string): Promise<boolean> {
     return await bcrypt.compare(password, this.password);
-  }
-  public static async generateHash (password: string) {
-    return await bcrypt.hash(password, bcrypt.genSaltSync(5));
   }
 }
 User.init({

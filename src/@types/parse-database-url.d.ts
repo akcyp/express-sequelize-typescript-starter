@@ -1,6 +1,6 @@
 declare module 'parse-database-url' {
   interface DbConfig {
-    driver: "mysql" | "postgres" | "sqlite" | "mariadb" | "mssql";
+    driver: 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql';
     host?: string;
     port?: string;
     user?: string;

@@ -3,11 +3,11 @@ import * as PassportLocal from 'passport-local';
 
 import User from '../models/User';
 
-passport.use('local', new PassportLocal.Strategy(async function(username, password, done) {
+passport.use('local', new PassportLocal.Strategy(async (username, password, done) => {
   try {
     const user = await User.findOne({
       where: {
-        username: username
+        username
       }
     });
     if (!user) {
@@ -22,11 +22,11 @@ passport.use('local', new PassportLocal.Strategy(async function(username, passwo
   }
 }));
 
-passport.use('local-signup', new PassportLocal.Strategy(async function(username, password, done) {
+passport.use('local-signup', new PassportLocal.Strategy(async (username, password, done) => {
   try {
     const oldUser = await User.findOne({
       where: {
-        username: username
+        username
       }
     });
     if (oldUser) {
