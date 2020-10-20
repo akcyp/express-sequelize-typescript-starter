@@ -18,7 +18,7 @@ import auth from './auth';
 router.use(auth);
 
 // Public routes below
-router.use('/src', express.static(path.join(__dirname, '../../src/public')));
+router.use('/src', express.static(path.join(__dirname, '../../public')));
 router.get('/', (_, res) => res.render('index'));
 router.get('/notLoggedIn', (_, res) => res.status(401).render('notLoggedIn'));
 router.get('*', (_, res) => res.status(404).end('404'));
