@@ -1,8 +1,16 @@
-# express-sequelize-typescript-starter
+<h1 align="center">Express Typescript Sequelize Starter</h1>
 
-A typescript boilerplate for NodeJS express applications!
+<p align="center">
+  <img src="./logo.png" alt="express" width="400" />
+</p>
 
-Stack:
+<p align="center">
+  A typescript boilerplate for NodeJS express applications!
+  <br>
+  <sub>Made with ❤️ by <a href="https://github.com/akcyp">akcyp</a>
+</p>
+
+# Stack
 
 - Express.js
 - Sequelize (ORM)
@@ -19,13 +27,13 @@ And more:
 - Bcrypt
 - Express-awesome-router
 
-## Pre-reqs
+# Pre-reqs
 
 - Install NodeJS
 - Install VSCode
 - Install Xampp
 
-## Getting started
+# Getting started
 
 - Clone the repository
 
